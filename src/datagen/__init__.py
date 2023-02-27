@@ -1,1 +1,1 @@
-from datageneration_finetune import prepare_trainer_dataset as prepare_trainer_dataset_fine
+from datagen.datageneration_finetune import prepare_trainer_dataset as prepare_trainer_dataset_fine
