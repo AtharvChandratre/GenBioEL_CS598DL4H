@@ -12,7 +12,7 @@ CUDA_VISIBLE_DEVICES=$DEVICE_NUMBER python /content/GenBioEL_CS598DL4H/src/train
                                             -model_load_path $INIT_MODEL \
                                             -model_token_path facebook/bart-large \
                                             -model_save_path ./model_checkpoints/$MODEL_NAME/$idx \
-                                            -save_steps 30000 \
+                                            -save_steps 3000 \
                                             -logging_path ./logs/$MODEL_NAME/$idx \
                                             -logging_steps 100 \
                                             -init_lr 5e-6 \
@@ -20,7 +20,7 @@ CUDA_VISIBLE_DEVICES=$DEVICE_NUMBER python /content/GenBioEL_CS598DL4H/src/train
                                             -evaluation_strategy no \
                                             -label_smoothing_factor 0.1 \
                                             -max_grad_norm 0.1 \
-                                            -max_steps 30000 \
+                                            -max_steps 3000 \
 					                        -warmup_steps 500 \
                                             -weight_decay 0.01 \
                                             -lr_scheduler_type polynomial \
