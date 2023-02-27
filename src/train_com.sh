@@ -5,7 +5,7 @@ DATASET=$2
 MODEL_NAME=$3
 INIT_MODEL=$4
 
-CUDA_VISIBLE_DEVICES=$DEVICE_NUMBER python ./train.py \
+CUDA_VISIBLE_DEVICES=$DEVICE_NUMBER python /content/GenBioEL_CS598DL4H/src/train.py \
                                             $DATASET/cometa/ \
                                             -model_load_path $INIT_MODEL \
                                             -model_save_path ./model_checkpoints/$MODEL_NAME \
@@ -31,7 +31,7 @@ CUDA_VISIBLE_DEVICES=$DEVICE_NUMBER python ./train.py \
 					                        -finetune \
 					                        -prefix_mention_is
 
-CUDA_VISIBLE_DEVICES=$DEVICE_NUMBER python ./train.py \
+CUDA_VISIBLE_DEVICES=$DEVICE_NUMBER python /content/GenBioEL_CS598DL4H/src/train.py \
                                             $DATASET/cometa \
                                             -evaluation \
                                             -trie_path $DATASET/cometa/trie.pkl\

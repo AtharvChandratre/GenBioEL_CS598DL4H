@@ -5,7 +5,7 @@ DATASET=$2
 MODEL_NAME=$3
 PRETRAIN_PATH=$4
 
-CUDA_VISIBLE_DEVICES=$DEVICE_NUMBER python ./train.py \
+CUDA_VISIBLE_DEVICES=$DEVICE_NUMBER python /content/GenBioEL_CS598DL4H/src/train.py \
                                             $DATASET/ncbi \
                                             -model_load_path $PRETRAIN_PATH \
                                             -model_save_path ./model_checkpoints/$MODEL_NAME \
@@ -32,7 +32,7 @@ CUDA_VISIBLE_DEVICES=$DEVICE_NUMBER python ./train.py \
                                             -prefix_mention_is \
                                             -finetune 
 
-CUDA_VISIBLE_DEVICES=$DEVICE_NUMBER python ./train.py \
+CUDA_VISIBLE_DEVICES=$DEVICE_NUMBER python /content/GenBioEL_CS598DL4H/src/train.py \
                                             $DATASET/ncbi \
                                             -evaluation \
                                             -model_load_path ./model_checkpoints/$MODEL_NAME/checkpoint-20000 \
