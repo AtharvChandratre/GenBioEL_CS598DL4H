@@ -5,7 +5,7 @@ MODEL_NAME=$2
 PRETRAIN_PATH=$3
 DATASET=$4
 
-CUDA_VISIBLE_DEVICES=$DEVICE_NUMBER python ./train.py \
+CUDA_VISIBLE_DEVICES=$DEVICE_NUMBER python /content/GenBioEL_CS598DL4H/src/train.py \
                                             $DATASET/bc5cdr \
                                             -model_load_path $PRETRAIN_PATH \
                                             -model_token_path facebook/bart-large \
@@ -31,7 +31,7 @@ CUDA_VISIBLE_DEVICES=$DEVICE_NUMBER python ./train.py \
 					                        -finetune \
 					                        -prefix_mention_is 
 
-CUDA_VISIBLE_DEVICES=$DEVICE_NUMBER python ./train.py \
+CUDA_VISIBLE_DEVICES=$DEVICE_NUMBER python /content/GenBioEL_CS598DL4H/src/train.py \
                                             $DATASET/bc5cdr \
                                             -model_token_path facebook/bart-large \
                                             -evaluation \

@@ -7,7 +7,7 @@ DATASET=$4
 
 for idx in {0..9};
 do
-CUDA_VISIBLE_DEVICES=$DEVICE_NUMBER python ./train.py \
+CUDA_VISIBLE_DEVICES=$DEVICE_NUMBER python /content/GenBioEL_CS598DL4H/src/train.py \
                                             $DATASET/aap/fold$idx \
                                             -model_load_path $INIT_MODEL \
                                             -model_token_path facebook/bart-large \
@@ -36,7 +36,7 @@ done
 
 for idx in {0..9};
 do
-CUDA_VISIBLE_DEVICES=$DEVICE_NUMBER python ./train.py \
+CUDA_VISIBLE_DEVICES=$DEVICE_NUMBER python /content/GenBioEL_CS598DL4H/src/train.py \
                                             $DATASET/aap/fold$idx \
                                             -evaluation \
 					                        -seed 0 \
