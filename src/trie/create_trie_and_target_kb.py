@@ -12,13 +12,13 @@ from trie import Trie
 
 tokenizer = BartTokenizer.from_pretrained('facebook/bart-large')
 
-with open('../benchmarks/bc5cdr/target_kb.json', 'r') as f:
+with open('../benchmarks/aap/target_kb.json', 'r') as f:
     cui2str = json.load(f)
 
 entities = []
 for cui in cui2str:
     entities += cui2str[cui]
 trie = Trie([16]+list(tokenizer(' ' + entity.lower())['input_ids'][1:]) for entity in tqdm(entities)).trie_dict
-with open('../benchmarks/bc5cdr/trie.pkl', 'wb') as w_f:
+with open('../benchmarks/aap/trie.pkl', 'wb') as w_f:
     pickle.dump(trie, w_f)
 print("finish running!")
